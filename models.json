@@ -1,0 +1,24 @@
+{
+  "schemaVersion": 1,
+  "manifestVersion": 1,
+  "generatedAt": "2026-06-21",
+  "signature": null,
+  "note": "hYYa Vault model catalog. Curated, engine-tagged, RAM-tiered. Weights download from Hugging Face over HTTPS; this file only lists them. Maintained by the hYYa Vault refresh agent.",
+  "chat": [
+    { "id": "mlx-community/gemma-3-1b-it-qat-4bit", "displayName": "Gemma 3 1B", "family": "gemma", "architecture": "gemma3", "params": "1B", "quant": "4bit", "runtime": "mlx", "diskBytes": 768606208, "minRamTier": 8, "contextLength": 32768, "capabilities": ["chat","multilingual"], "license": "gemma", "recommended": false, "blurb": "Ultralight; runs on the smallest Macs." },
+    { "id": "mlx-community/Qwen3-1.7B-4bit", "displayName": "Qwen3 1.7B", "family": "qwen", "architecture": "qwen3", "params": "1.7B", "quant": "4bit", "runtime": "mlx", "diskBytes": 1015021568, "minRamTier": 8, "contextLength": 32768, "capabilities": ["chat","reasoning","multilingual"], "license": "apache-2.0", "recommended": false, "blurb": "Fast, capable small model." },
+    { "id": "mlx-community/Llama-3.2-3B-Instruct-4bit", "displayName": "Llama 3.2 3B", "family": "llama", "architecture": "llama", "params": "3B", "quant": "4bit", "runtime": "mlx", "diskBytes": 1943547412, "minRamTier": 8, "contextLength": 131072, "capabilities": ["chat","multilingual"], "license": "llama-3.2", "recommended": false, "blurb": "Long context; strong general chat." },
+    { "id": "mlx-community/Qwen3-4B-4bit", "displayName": "Qwen3 4B", "family": "qwen", "architecture": "qwen3", "params": "4B", "quant": "4bit", "runtime": "mlx", "diskBytes": 2426181222, "minRamTier": 8, "contextLength": 32768, "capabilities": ["chat","reasoning","multilingual"], "license": "apache-2.0", "recommended": true, "blurb": "Best quality-for-size; multilingual; thinking toggle. hYYa default." },
+    { "id": "mlx-community/Qwen3-8B-4bit", "displayName": "Qwen3 8B", "family": "qwen", "architecture": "qwen3", "params": "8B", "quant": "4bit", "runtime": "mlx", "diskBytes": 4949237432, "minRamTier": 16, "contextLength": 32768, "capabilities": ["chat","reasoning","multilingual"], "license": "apache-2.0", "recommended": false, "blurb": "Stronger reasoning for 16GB+ Macs." },
+    { "id": "mlx-community/gemma-2-9b-it-4bit", "displayName": "Gemma 2 9B", "family": "gemma", "architecture": "gemma2", "params": "9B", "quant": "4bit", "runtime": "mlx", "diskBytes": 5583457484, "minRamTier": 16, "contextLength": 8192, "capabilities": ["chat","multilingual"], "license": "gemma", "recommended": false, "blurb": "High-quality general chat." },
+    { "id": "mlx-community/Qwen3-30B-A3B-4bit", "displayName": "Qwen3 30B A3B (MoE)", "family": "qwen", "architecture": "qwen3_moe", "params": "30B-A3B", "quant": "4bit", "runtime": "mlx", "diskBytes": 18469135974, "minRamTier": 32, "contextLength": 32768, "capabilities": ["chat","reasoning","multilingual"], "license": "apache-2.0", "recommended": false, "blurb": "Flagship; MoE runs ~3B active so it stays fast. 32GB+." }
+  ],
+  "image": [
+    { "id": "stabilityai/stable-diffusion-2-1-base", "displayName": "Stable Diffusion 2.1 (Light)", "family": "sd", "architecture": "sd2", "runtime": "mlx-sd", "preset": "presetStableDiffusion21Base", "diskBytes": 2791728742, "minRamTier": 8, "defaultSteps": 50, "nativeResolution": 512, "capabilities": ["image"], "license": "openrail-m", "recommended": false, "blurb": "Lightest image model; runs on 8GB Macs." },
+    { "id": "stabilityai/sdxl-turbo", "displayName": "SDXL Turbo (Fast)", "family": "sdxl", "architecture": "sdxl", "runtime": "mlx-sd", "preset": "presetSDXLTurbo", "diskBytes": 7460000000, "minRamTier": 16, "defaultSteps": 2, "nativeResolution": 512, "capabilities": ["image","image-edit"], "license": "stabilityai-community", "recommended": true, "blurb": "Near-real-time, best quality of the two. hYYa default." }
+  ],
+  "embedder": [
+    { "id": "mlx-community/bge-m3-mlx-fp16", "displayName": "BGE-M3 (multilingual)", "family": "bge", "architecture": "xlm-roberta", "runtime": "mlx", "dim": 1024, "maxSeqLen": 8192, "pooling": "mean", "normalize": true, "diskBytes": 1140000000, "minRamTier": 8, "capabilities": ["embed","multilingual"], "license": "mit", "recommended": true, "blurb": "Long-context multilingual retrieval. hYYa default." },
+    { "id": "mlx-community/multilingual-e5-small", "displayName": "Multilingual E5 Small", "family": "e5", "architecture": "bert", "runtime": "mlx", "dim": 384, "maxSeqLen": 512, "pooling": "mean", "normalize": true, "queryPrefix": "query: ", "docPrefix": "passage: ", "diskBytes": 471000000, "minRamTier": 8, "capabilities": ["embed","multilingual"], "license": "mit", "recommended": false, "blurb": "Lightweight legacy embedder." }
+  ]
+}
