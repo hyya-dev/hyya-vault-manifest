@@ -1,9 +1,9 @@
 {
   "schemaVersion": 1,
-  "manifestVersion": 3,
-  "generatedAt": "2026-07-23",
+  "manifestVersion": 8,
+  "generatedAt": "2026-09-04",
   "signature": null,
-  "note": "hYYa Vault model catalog. Curated, engine-tagged (runtime), RAM-tiered. The actual model weights download from Hugging Face over HTTPS; this file only lists them. Bundled in-app (offline-first) and published+signed at https://hyya-dev.github.io/hyya-vault-manifest/models.json.",
+  "note": "hYYa Vault model catalog. Curated, engine-tagged (runtime), RAM-tiered. The actual model weights download from Hugging Face over HTTPS; this file only lists them. Bundled in-app (offline-first) and published+signed at https://hyya-dev.github.io/hyya-vault-manifest/models.json. v8: the bundled 2026-06-21 catalog (17 chat models, iOS-tagged) published to the live channel on 2026-09-04 — live v3 was older than the bundle, so no app had accepted a live catalog since the 07-23 rotation.",
   "chat": [
     {
       "id": "qwen3.5-4b-4bit",
@@ -26,7 +26,10 @@
       ],
       "license": "apache-2.0",
       "recommended": true,
-      "blurb": "Best quality-for-size; multilingual; thinking toggle. hYYa default."
+      "blurb": "Best quality-for-size; multilingual; thinking toggle. hYYa default.",
+      "platforms": [
+        "macos"
+      ]
     },
     {
       "id": "gemma-3-1b-4bit",
@@ -48,7 +51,10 @@
       ],
       "license": "gemma",
       "recommended": false,
-      "blurb": "Ultralight; runs on the smallest Macs."
+      "blurb": "Ultralight; runs on the smallest Macs.",
+      "platforms": [
+        "macos"
+      ]
     },
     {
       "id": "llama-3.2-3b-4bit",
@@ -70,7 +76,10 @@
       ],
       "license": "llama-3.2",
       "recommended": false,
-      "blurb": "Long context; strong general chat."
+      "blurb": "Long context; strong general chat.",
+      "platforms": [
+        "macos"
+      ]
     },
     {
       "id": "qwen3.5-9b-4bit",
@@ -93,7 +102,10 @@
       ],
       "license": "apache-2.0",
       "recommended": false,
-      "blurb": "Stronger reasoning for 16GB+ Macs."
+      "blurb": "Stronger reasoning for 16GB+ Macs.",
+      "platforms": [
+        "macos"
+      ]
     },
     {
       "id": "qwen3-8b-4bit",
@@ -116,7 +128,10 @@
       ],
       "license": "apache-2.0",
       "recommended": false,
-      "blurb": "Capable 8B for 16GB+ Macs."
+      "blurb": "Capable 8B for 16GB+ Macs.",
+      "platforms": [
+        "macos"
+      ]
     },
     {
       "id": "gemma-2-9b-4bit",
@@ -138,7 +153,10 @@
       ],
       "license": "gemma",
       "recommended": false,
-      "blurb": "High-quality general chat."
+      "blurb": "High-quality general chat.",
+      "platforms": [
+        "macos"
+      ]
     },
     {
       "id": "qwen3.6-27b-4bit",
@@ -161,7 +179,10 @@
       ],
       "license": "apache-2.0",
       "recommended": false,
-      "blurb": "Large, high-quality model for 32GB+ Macs."
+      "blurb": "Large, high-quality model for 32GB+ Macs.",
+      "platforms": [
+        "macos"
+      ]
     },
     {
       "id": "qwen3.6-35b-a3b-4bit",
@@ -184,7 +205,247 @@
       ],
       "license": "apache-2.0",
       "recommended": false,
-      "blurb": "Flagship MoE; runs ~3B active so it stays fast. 32GB+."
+      "blurb": "Flagship MoE; runs ~3B active so it stays fast. 32GB+.",
+      "platforms": [
+        "macos"
+      ]
+    },
+    {
+      "id": "qwen3.5-0.8b-4bit",
+      "hfRepo": "mlx-community/Qwen3.5-0.8B-4bit",
+      "displayName": "Qwen3.5 0.8B (4-bit)",
+      "family": "qwen",
+      "architecture": "qwen3_5",
+      "runtime": "mlx",
+      "params": "0.8B",
+      "quant": "4bit",
+      "sizeBytes": 652027821,
+      "minRamGB": 2,
+      "tier": "small",
+      "kind": "chat",
+      "contextLength": 32768,
+      "capabilities": [
+        "chat",
+        "reasoning",
+        "multilingual"
+      ],
+      "license": "apache-2.0",
+      "recommended": true,
+      "blurb": "Fast, private answers on iPhone and iPad. Smallest download.",
+      "platforms": [
+        "ios"
+      ]
+    },
+    {
+      "id": "qwen3.5-4b-4bit-ios",
+      "hfRepo": "mlx-community/Qwen3.5-4B-4bit",
+      "displayName": "Qwen3.5 4B (4-bit)",
+      "family": "qwen",
+      "architecture": "qwen3_5",
+      "runtime": "mlx",
+      "params": "4B",
+      "quant": "4bit",
+      "sizeBytes": 3061129077,
+      "minRamGB": 6,
+      "tier": "medium",
+      "kind": "chat",
+      "contextLength": 32768,
+      "capabilities": [
+        "chat",
+        "reasoning",
+        "multilingual"
+      ],
+      "license": "apache-2.0",
+      "recommended": false,
+      "blurb": "Strongest on-device answers, for iPads with plenty of memory. Text only.",
+      "platforms": [
+        "ios"
+      ]
+    },
+    {
+      "id": "qwen3.5-2b-4bit-ios",
+      "hfRepo": "mlx-community/Qwen3.5-2B-4bit",
+      "displayName": "Qwen3.5 2B (4-bit)",
+      "family": "qwen",
+      "architecture": "qwen3_5",
+      "runtime": "mlx",
+      "params": "2B",
+      "quant": "4bit",
+      "sizeBytes": 1749080357,
+      "minRamGB": 4,
+      "tier": "small",
+      "kind": "chat",
+      "contextLength": 32768,
+      "capabilities": [
+        "chat",
+        "reasoning",
+        "multilingual"
+      ],
+      "license": "apache-2.0",
+      "recommended": false,
+      "blurb": "Noticeably stronger than the 0.8B, still comfortable on a modern iPhone.",
+      "platforms": [
+        "ios"
+      ]
+    },
+    {
+      "id": "llama-3.2-1b-4bit-ios",
+      "hfRepo": "mlx-community/Llama-3.2-1B-Instruct-4bit",
+      "displayName": "Llama 3.2 1B (4-bit)",
+      "family": "llama",
+      "architecture": "llama",
+      "runtime": "mlx",
+      "params": "1B",
+      "quant": "4bit",
+      "sizeBytes": 712592285,
+      "minRamGB": 2,
+      "tier": "small",
+      "kind": "chat",
+      "contextLength": 32768,
+      "capabilities": [
+        "chat",
+        "multilingual"
+      ],
+      "license": "llama3.2",
+      "recommended": false,
+      "blurb": "A different family for a second opinion. Text only.",
+      "platforms": [
+        "ios"
+      ]
+    },
+    {
+      "id": "qwen3-0.6b-litertlm",
+      "hfRepo": "litert-community/Qwen3-0.6B",
+      "fileName": "qwen3_0_6b_mixed_int4.litertlm",
+      "displayName": "Qwen3 0.6B (int4)",
+      "family": "qwen",
+      "architecture": "qwen3",
+      "runtime": "litertlm",
+      "params": "0.6B",
+      "quant": "int4",
+      "sizeBytes": 497664000,
+      "minRamGB": 4,
+      "tier": "small",
+      "kind": "chat",
+      "contextLength": 32768,
+      "capabilities": [
+        "chat",
+        "multilingual"
+      ],
+      "license": "apache-2.0",
+      "recommended": false,
+      "blurb": "Smallest download. For phones with limited memory or storage.",
+      "platforms": [
+        "android"
+      ]
+    },
+    {
+      "id": "qwen3-1.7b-litertlm",
+      "hfRepo": "litert-community/Qwen3-1.7B",
+      "fileName": "Qwen3_1.7B.litertlm",
+      "displayName": "Qwen3 1.7B",
+      "family": "qwen",
+      "architecture": "qwen3",
+      "runtime": "litertlm",
+      "params": "1.7B",
+      "quant": "int4",
+      "sizeBytes": 2056729520,
+      "minRamGB": 6,
+      "tier": "small",
+      "kind": "chat",
+      "contextLength": 32768,
+      "capabilities": [
+        "chat",
+        "reasoning",
+        "multilingual"
+      ],
+      "license": "apache-2.0",
+      "recommended": false,
+      "blurb": "Good balance of quality and size on a mid-range phone.",
+      "platforms": [
+        "android"
+      ]
+    },
+    {
+      "id": "gemma-4-e2b-litertlm",
+      "hfRepo": "litert-community/gemma-4-E2B-it-litert-lm",
+      "fileName": "gemma-4-E2B-it.litertlm",
+      "displayName": "Gemma 4 E2B",
+      "family": "gemma",
+      "architecture": "gemma4",
+      "runtime": "litertlm",
+      "params": "E2B",
+      "quant": "int4",
+      "sizeBytes": 2588147712,
+      "minRamGB": 8,
+      "tier": "medium",
+      "kind": "chat",
+      "contextLength": 32768,
+      "capabilities": [
+        "chat",
+        "reasoning",
+        "multilingual"
+      ],
+      "license": "apache-2.0",
+      "recommended": true,
+      "blurb": "Best quality-for-size on Android. hYYa default.",
+      "platforms": [
+        "android"
+      ]
+    },
+    {
+      "id": "qwen3-4b-litertlm",
+      "hfRepo": "litert-community/Qwen3-4B",
+      "fileName": "qwen3_4b_mixed_int4.litertlm",
+      "displayName": "Qwen3 4B (int4)",
+      "family": "qwen",
+      "architecture": "qwen3",
+      "runtime": "litertlm",
+      "params": "4B",
+      "quant": "int4",
+      "sizeBytes": 2659057664,
+      "minRamGB": 8,
+      "tier": "medium",
+      "kind": "chat",
+      "contextLength": 32768,
+      "capabilities": [
+        "chat",
+        "reasoning",
+        "multilingual"
+      ],
+      "license": "apache-2.0",
+      "recommended": false,
+      "blurb": "Higher answer quality. Needs a recent flagship phone.",
+      "platforms": [
+        "android"
+      ]
+    },
+    {
+      "id": "gemma-4-e4b-litertlm",
+      "hfRepo": "litert-community/gemma-4-E4B-it-litert-lm",
+      "fileName": "gemma-4-E4B-it.litertlm",
+      "displayName": "Gemma 4 E4B",
+      "family": "gemma",
+      "architecture": "gemma4",
+      "runtime": "litertlm",
+      "params": "E4B",
+      "quant": "int4",
+      "sizeBytes": 3659530240,
+      "minRamGB": 12,
+      "tier": "large",
+      "kind": "chat",
+      "contextLength": 32768,
+      "capabilities": [
+        "chat",
+        "reasoning",
+        "multilingual"
+      ],
+      "license": "apache-2.0",
+      "recommended": false,
+      "blurb": "The most capable on-device model here. High-memory phones only.",
+      "platforms": [
+        "android"
+      ]
     }
   ],
   "image": [
@@ -207,7 +468,10 @@
       ],
       "license": "openrail-m",
       "recommended": false,
-      "blurb": "Lightest image model; runs on 8GB Macs."
+      "blurb": "Lightest image model; runs on 8GB Macs.",
+      "platforms": [
+        "macos"
+      ]
     },
     {
       "id": "sdxl-turbo",
@@ -229,7 +493,10 @@
       ],
       "license": "stabilityai-community",
       "recommended": true,
-      "blurb": "Near-real-time, best quality of the two. hYYa default."
+      "blurb": "Near-real-time, best quality of the two. hYYa default.",
+      "platforms": [
+        "macos"
+      ]
     }
   ],
   "embedder": [
@@ -242,14 +509,11 @@
       "runtime": "mlx",
       "params": "118M",
       "quant": "fp32",
-      "sizeBytes": 471000000,
+      "sizeBytes": 504810232,
       "minRamGB": 8,
       "tier": "small",
       "kind": "embedding",
-      "dim": 384,
       "maxSeqLen": 512,
-      "pooling": "mean",
-      "normalize": true,
       "queryPrefix": "query: ",
       "docPrefix": "passage: ",
       "capabilities": [
@@ -258,7 +522,10 @@
       ],
       "license": "mit",
       "recommended": true,
-      "blurb": "Active on-device retrieval embedder."
+      "blurb": "Active on-device retrieval embedder.",
+      "platforms": [
+        "macos"
+      ]
     },
     {
       "id": "bge-m3",
@@ -273,17 +540,44 @@
       "minRamGB": 8,
       "tier": "small",
       "kind": "embedding",
-      "dim": 1024,
       "maxSeqLen": 8192,
-      "pooling": "mean",
-      "normalize": true,
       "capabilities": [
         "embed",
         "multilingual"
       ],
       "license": "mit",
       "recommended": false,
-      "blurb": "Long-context multilingual upgrade (requires re-index)."
+      "blurb": "Long-context multilingual upgrade (requires re-index).",
+      "platforms": [
+        "macos"
+      ]
+    },
+    {
+      "id": "multilingual-e5-small-ios",
+      "hfRepo": "intfloat/multilingual-e5-small",
+      "displayName": "Multilingual E5 Small",
+      "family": "e5",
+      "architecture": "bert",
+      "runtime": "mlx",
+      "params": "118M",
+      "quant": "fp32",
+      "sizeBytes": 504810232,
+      "minRamGB": 2,
+      "tier": "small",
+      "kind": "embedding",
+      "maxSeqLen": 512,
+      "queryPrefix": "query: ",
+      "docPrefix": "passage: ",
+      "capabilities": [
+        "embed",
+        "multilingual"
+      ],
+      "license": "mit",
+      "recommended": true,
+      "blurb": "Active on-device retrieval embedder.",
+      "platforms": [
+        "ios"
+      ]
     }
   ]
 }
