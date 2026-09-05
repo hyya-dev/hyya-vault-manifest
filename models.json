@@ -1,9 +1,9 @@
 {
   "schemaVersion": 1,
-  "manifestVersion": 8,
+  "manifestVersion": 9,
   "generatedAt": "2026-09-04",
   "signature": null,
-  "note": "hYYa Vault model catalog. Curated, engine-tagged (runtime), RAM-tiered. The actual model weights download from Hugging Face over HTTPS; this file only lists them. Bundled in-app (offline-first) and published+signed at https://hyya-dev.github.io/hyya-vault-manifest/models.json. v8: the bundled 2026-06-21 catalog (17 chat models, iOS-tagged) published to the live channel on 2026-09-04 — live v3 was older than the bundle, so no app had accepted a live catalog since the 07-23 rotation.",
+  "note": "hYYa Vault model catalog. Curated, engine-tagged (runtime), RAM-tiered. The actual model weights download from Hugging Face over HTTPS; this file only lists them. Bundled in-app (offline-first) and published+signed at https://hyya-dev.github.io/hyya-vault-manifest/models.json. v9: Stable Diffusion 2.1 tagged runnable on iOS (illustrations for exports on iPhone/iPad, founder 2026-09-04 — identical to macOS); SDXL-Turbo stays macOS by its 16 GB floor.",
   "chat": [
     {
       "id": "qwen3.5-4b-4bit",
@@ -468,9 +468,10 @@
       ],
       "license": "openrail-m",
       "recommended": false,
-      "blurb": "Lightest image model; runs on 8GB Macs.",
+      "blurb": "Lightest image model; runs on 8 GB devices.",
       "platforms": [
-        "macos"
+        "macos",
+        "ios"
       ]
     },
     {
