@@ -1,9 +1,9 @@
 {
   "schemaVersion": 1,
-  "manifestVersion": 10,
+  "manifestVersion": 11,
   "generatedAt": "2026-09-05",
   "signature": null,
-  "note": "hYYa Vault model catalog. Curated, engine-tagged (runtime), RAM-tiered. The actual model weights download from Hugging Face over HTTPS; this file only lists them. Bundled in-app (offline-first) and published+signed at https://hyya-dev.github.io/hyya-vault-manifest/models.json. v10: iOS chat entries ordered smallest-first like the Mac ladder (founder, build 78); SD 2.1 carries minRamGBiOS 5 — the floor an iPhone's app budget is compared against, measured on TestFlight — while its 8 GB Mac floor stands.",
+  "note": "hYYa Vault model catalog. Curated, engine-tagged (runtime), RAM-tiered. The actual model weights download from Hugging Face over HTTPS; this file only lists them. Bundled in-app (offline-first) and published+signed at https://hyya-dev.github.io/hyya-vault-manifest/models.json. v11: SD 2.1's iOS floor is 8 GB of usable memory — measured on an iPhone 17 Pro Max (builds 79–83, the phone's log): with the chat model unloaded, a 384² render ran four minutes under memory pressure and the system killed the app. No iPhone has that budget; a 16 GB iPad is the rung to measure next.",
   "chat": [
     {
       "id": "qwen3.5-4b-4bit",
@@ -468,12 +468,12 @@
       ],
       "license": "openrail-m",
       "recommended": false,
-      "blurb": "Lightest image model; runs on 8 GB Macs and 12 GB iPhones/iPads.",
+      "blurb": "Lightest image model; runs on 8 GB Macs and iPads with 16 GB.",
       "platforms": [
         "macos",
         "ios"
       ],
-      "minRamGBiOS": 5
+      "minRamGBiOS": 8
     },
     {
       "id": "sdxl-turbo",
