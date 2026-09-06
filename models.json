@@ -1,9 +1,9 @@
 {
   "schemaVersion": 1,
-  "manifestVersion": 11,
-  "generatedAt": "2026-09-05",
+  "manifestVersion": 12,
+  "generatedAt": "2026-09-06",
   "signature": null,
-  "note": "hYYa Vault model catalog. Curated, engine-tagged (runtime), RAM-tiered. The actual model weights download from Hugging Face over HTTPS; this file only lists them. Bundled in-app (offline-first) and published+signed at https://hyya-dev.github.io/hyya-vault-manifest/models.json. v11: SD 2.1's iOS floor is 8 GB of usable memory — measured on an iPhone 17 Pro Max (builds 79–83, the phone's log): with the chat model unloaded, a 384² render ran four minutes under memory pressure and the system killed the app. No iPhone has that budget; a 16 GB iPad is the rung to measure next.",
+  "note": "hYYa Vault model catalog. Curated, engine-tagged (runtime), RAM-tiered. The actual model weights download from Hugging Face over HTTPS; this file only lists them. Bundled in-app (offline-first) and published+signed at https://hyya-dev.github.io/hyya-vault-manifest/models.json. v11: SD 2.1's iOS floor is 8 GB of usable memory — measured on an iPhone 17 Pro Max (builds 79–83, the phone's log): with the chat model unloaded, a 384² render ran four minutes under memory pressure and the system killed the app. No iPhone has that budget; a 16 GB iPad is the rung to measure next. v12 (2026-09-06): the two Gemma 4 LiteRT-LM bundles declare vision — their published model card ships the vision and audio encoders in the .litertlm file (loaded on demand), and Android 1.1.0 (9) measured the S25 Ultra describing a photo with the E2B on its GPU. The MLX entries stay blind until the Apple engine loads vision towers (LLMModelFactory drops them).",
   "chat": [
     {
       "id": "qwen3.5-4b-4bit",
@@ -384,7 +384,8 @@
       "capabilities": [
         "chat",
         "reasoning",
-        "multilingual"
+        "multilingual",
+        "vision"
       ],
       "license": "apache-2.0",
       "recommended": true,
@@ -438,7 +439,8 @@
       "capabilities": [
         "chat",
         "reasoning",
-        "multilingual"
+        "multilingual",
+        "vision"
       ],
       "license": "apache-2.0",
       "recommended": false,
