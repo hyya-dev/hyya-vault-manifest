@@ -1,9 +1,9 @@
 {
   "schemaVersion": 1,
-  "manifestVersion": 12,
-  "generatedAt": "2026-09-06",
+  "manifestVersion": 13,
+  "generatedAt": "2026-09-08T07:34:09.860Z",
   "signature": null,
-  "note": "hYYa Vault model catalog. Curated, engine-tagged (runtime), RAM-tiered. The actual model weights download from Hugging Face over HTTPS; this file only lists them. Bundled in-app (offline-first) and published+signed at https://hyya-dev.github.io/hyya-vault-manifest/models.json. v11: SD 2.1's iOS floor is 8 GB of usable memory — measured on an iPhone 17 Pro Max (builds 79–83, the phone's log): with the chat model unloaded, a 384² render ran four minutes under memory pressure and the system killed the app. No iPhone has that budget; a 16 GB iPad is the rung to measure next. v12 (2026-09-06): the two Gemma 4 LiteRT-LM bundles declare vision — their published model card ships the vision and audio encoders in the .litertlm file (loaded on demand), and Android 1.1.0 (9) measured the S25 Ultra describing a photo with the E2B on its GPU. The MLX entries stay blind until the Apple engine loads vision towers (LLMModelFactory drops them).",
+  "note": "hYYa Vault model catalog. Curated, engine-tagged (runtime), RAM-tiered. The actual model weights download from Hugging Face over HTTPS; this file only lists them. Bundled in-app (offline-first) and published+signed at https://hyya-dev.github.io/hyya-vault-manifest/models.json. v11: SD 2.1's iOS floor is 8 GB of usable memory — measured on an iPhone 17 Pro Max (builds 79–83, the phone's log): with the chat model unloaded, a 384² render ran four minutes under memory pressure and the system killed the app. No iPhone has that budget; a 16 GB iPad is the rung to measure next. v12 (2026-09-06): the two Gemma 4 LiteRT-LM bundles declare vision — their published model card ships the vision and audio encoders in the .litertlm file (loaded on demand), and Android 1.1.0 (9) measured the S25 Ultra describing a photo with the E2B on its GPU. The MLX entries stay blind until the Apple engine loads vision towers (LLMModelFactory drops them). v13 (2026-09-08): the ANDROID embedder — multilingual-e5-small through ONNX Runtime, in two rungs by usable memory (fp16 at 6 GB, int8 at 4 GB), so the device gates it exactly as it gates a chat model. Same weights as macOS/iOS; the ONNX builds differ NUMERICALLY from fp32 MLX, and what has to match for equivalence is the four contract conditions (prefixes, mean pooling, L2, the 512 clamp), not the file format. `extraFiles` is new and carries the tokenizer: a listed file is never skipped.",
   "chat": [
     {
       "id": "qwen3.5-4b-4bit",
@@ -582,6 +582,68 @@
       "platforms": [
         "ios"
       ]
+    },
+    {
+      "hfRepo": "intfloat/multilingual-e5-small",
+      "family": "e5",
+      "architecture": "bert",
+      "runtime": "onnx",
+      "params": "118M",
+      "tier": "small",
+      "kind": "embedding",
+      "maxSeqLen": 512,
+      "queryPrefix": "query: ",
+      "docPrefix": "passage: ",
+      "capabilities": [
+        "embed",
+        "multilingual"
+      ],
+      "license": "mit",
+      "platforms": [
+        "android"
+      ],
+      "extraFiles": [
+        "onnx/tokenizer.json"
+      ],
+      "id": "multilingual-e5-small-android",
+      "fileName": "onnx/model_O4.onnx",
+      "displayName": "Multilingual E5 Small",
+      "quant": "fp16",
+      "sizeBytes": 252135261,
+      "minRamGB": 6,
+      "recommended": true,
+      "blurb": "Meaning-based document search, on the device."
+    },
+    {
+      "hfRepo": "intfloat/multilingual-e5-small",
+      "family": "e5",
+      "architecture": "bert",
+      "runtime": "onnx",
+      "params": "118M",
+      "tier": "small",
+      "kind": "embedding",
+      "maxSeqLen": 512,
+      "queryPrefix": "query: ",
+      "docPrefix": "passage: ",
+      "capabilities": [
+        "embed",
+        "multilingual"
+      ],
+      "license": "mit",
+      "platforms": [
+        "android"
+      ],
+      "extraFiles": [
+        "onnx/tokenizer.json"
+      ],
+      "id": "multilingual-e5-small-android-int8",
+      "fileName": "onnx/model_qint8_avx512_vnni.onnx",
+      "displayName": "Multilingual E5 Small (compact)",
+      "quant": "int8",
+      "sizeBytes": 135378730,
+      "minRamGB": 4,
+      "recommended": false,
+      "blurb": "Half the download, for phones with less memory."
     }
   ]
 }
