@@ -1,9 +1,9 @@
 {
   "schemaVersion": 1,
-  "manifestVersion": 14,
-  "generatedAt": "2026-10-01T08:56:07Z",
+  "manifestVersion": 15,
+  "generatedAt": "2026-10-27T05:14:33Z",
   "signature": null,
-  "note": "hYYa Vault model catalog. Curated, engine-tagged (runtime), RAM-tiered. The actual model weights download from Hugging Face over HTTPS; this file only lists them. Bundled in-app (offline-first) and published+signed at https://hyya-dev.github.io/hyya-vault-manifest/models.json. v11: SD 2.1's iOS floor is 8 GB of usable memory — measured on an iPhone 17 Pro Max (builds 79–83, the phone's log): with the chat model unloaded, a 384² render ran four minutes under memory pressure and the system killed the app. No iPhone has that budget; a 16 GB iPad is the rung to measure next. v12 (2026-09-06): the two Gemma 4 LiteRT-LM bundles declare vision — their published model card ships the vision and audio encoders in the .litertlm file (loaded on demand), and Android 1.1.0 (9) measured the S25 Ultra describing a photo with the E2B on its GPU. The MLX entries stay blind until the Apple engine loads vision towers (LLMModelFactory drops them). v13 (2026-09-08): the ANDROID embedder — multilingual-e5-small through ONNX Runtime, in two rungs by usable memory (fp16 at 6 GB, int8 at 4 GB), so the device gates it exactly as it gates a chat model. Same weights as macOS/iOS; the ONNX builds differ NUMERICALLY from fp32 MLX, and what has to match for equivalence is the four contract conditions (prefixes, mean pooling, L2, the 512 clamp), not the file format. `extraFiles` is new and carries the tokenizer: a listed file is never skipped. v14 (2026-10-01): Gemma 3 12B replaces Gemma 2 9B on the Mac (the founder's 2026-09-30 approval; held by measurement, then released 2026-10-01 — he accepts the 'that is in hYYa Cloud' wording). Measured on a Mac before it entered: identity, the attached document and recall pass; a 131,072-token window read from the model; 10.7 GB peak at the medium tier's full budget with the engine's stepped prefill (B49), hence minRamGB 24. Gemma 2 9B is `retired`: listed only where its bytes are on disk, never recommended. Sizes corrected to what the app fetches (B40): llama-3.2-3b, qwen3-8b, gemma-2-9b, gemma-3-1b. Bundled first; the PUBLISHED copy waits until 1.1.12 is on sale (older apps lack the alternation repair, B37) and needs the founder's signature.",
+  "note": "hYYa Vault model catalog. Curated, engine-tagged (runtime), RAM-tiered. The actual model weights download from Hugging Face over HTTPS; this file only lists them. Bundled in-app (offline-first) and published+signed at https://hyya-dev.github.io/hyya-vault-manifest/models.json. v11: SD 2.1's iOS floor is 8 GB of usable memory — measured on an iPhone 17 Pro Max (builds 79–83, the phone's log): with the chat model unloaded, a 384² render ran four minutes under memory pressure and the system killed the app. No iPhone has that budget; a 16 GB iPad is the rung to measure next. v12 (2026-09-06): the two Gemma 4 LiteRT-LM bundles declare vision — their published model card ships the vision and audio encoders in the .litertlm file (loaded on demand), and Android 1.1.0 (9) measured the S25 Ultra describing a photo with the E2B on its GPU. The MLX entries stay blind until the Apple engine loads vision towers (LLMModelFactory drops them). v13 (2026-09-08): the ANDROID embedder — multilingual-e5-small through ONNX Runtime, in two rungs by usable memory (fp16 at 6 GB, int8 at 4 GB), so the device gates it exactly as it gates a chat model. Same weights as macOS/iOS; the ONNX builds differ NUMERICALLY from fp32 MLX, and what has to match for equivalence is the four contract conditions (prefixes, mean pooling, L2, the 512 clamp), not the file format. `extraFiles` is new and carries the tokenizer: a listed file is never skipped. v14 (2026-10-01): Gemma 3 12B replaces Gemma 2 9B on the Mac (the founder's 2026-09-30 approval; held by measurement, then released 2026-10-01 — he accepts the 'that is in hYYa Cloud' wording). Measured on a Mac before it entered: identity, the attached document and recall pass; a 131,072-token window read from the model; 10.7 GB peak at the medium tier's full budget with the engine's stepped prefill (B49), hence minRamGB 24. Gemma 2 9B is `retired`: listed only where its bytes are on disk, never recommended. Sizes corrected to what the app fetches (B40): llama-3.2-3b, qwen3-8b, gemma-2-9b, gemma-3-1b. Bundled first; the PUBLISHED copy waits until 1.1.12 is on sale (older apps lack the alternation repair, B37) and needs the founder's signature. v15 (2026-10-27, the founder: add what qualifies): Qwen3.8 27B replaces Qwen3.6 27B, which is `retired` (listed only where installed, never recommended). Measured on a 48 GB M5 Pro through the shipped engine and prompt (tools/system-prompt-probe, 63 replies): identity 3/3, the attached document's facts 6/6, no invented document 3/3, recall 3/3, File Generation off → switch it on 6/6, flight/alarm never attributed to hYYa Cloud 6/6, Arabic 3/3, ordinary requests 0/30 limits notes; peak 15.8 GB (minRamGB 32 as before), ~15 tok/s; template takes a system message, window 262,144 (budgeted 32,768). Same architecture as 3.6 (qwen3_5).",
   "chat": [
     {
       "id": "qwen3.5-4b-4bit",
@@ -194,6 +194,33 @@
       "params": "27B",
       "quant": "4bit",
       "sizeBytes": 16081487798,
+      "minRamGB": 32,
+      "tier": "large",
+      "kind": "chat",
+      "contextLength": 32768,
+      "capabilities": [
+        "chat",
+        "reasoning",
+        "multilingual"
+      ],
+      "license": "apache-2.0",
+      "recommended": false,
+      "blurb": "Large, high-quality model for 32GB+ Macs.",
+      "platforms": [
+        "macos"
+      ],
+      "retired": true
+    },
+    {
+      "id": "qwen3.8-27b-4bit",
+      "hfRepo": "mlx-community/Qwen3.8-27B-4bit",
+      "displayName": "Qwen3.8 27B (4-bit)",
+      "family": "qwen",
+      "architecture": "qwen3_5",
+      "runtime": "mlx",
+      "params": "27B",
+      "quant": "4bit",
+      "sizeBytes": 16081490933,
       "minRamGB": 32,
       "tier": "large",
       "kind": "chat",
